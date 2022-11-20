@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+$darkRed: #AA3939;
+*{
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.btn{
+  color: #fff;
+  border-radius: 10px;
+  background-color: #AA3939;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 5px 16px;
+  border: none;
+  transition: .2s;
+  cursor: pointer;
+  &:hover{
+    background-color: #fff;
+    color: #AA3939
+  }
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  display: flex;
+  padding: 12px 120px;
+  align-items: center;
+  background: #1B1B1B;
+  .logo{
+    flex: 1 1 10px;
+  }
+  .navbar{
+    display: flex;
+    flex: 1 1 auto;
+    gap: 50px;
+    a{
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .active{
+      font-weight: 500;
+      position: relative;
+      &::after{
+        content: '';
+        bottom: -10px;
+        left: 23%;
+        width: 50%;
+        height: 3.3px;
+        border-radius: 10px;
+        position: absolute;
+        background: $darkRed;
+      }
+    }
+  }
+  .basket{
+    position: relative;
+    .basket__head{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .basket__products{
+      position: absolute;
+      background: #fff;
+      width: 500px;
+      top: 100%;
+      margin-top: 15px;
+      right: 0;
+      border-radius: 20px;
+      padding: 16px 13px;
+      h2{
+        text-align: center;
+        cursor: default;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .products{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .basket__card{
+          display: flex;
+          gap: 5px;
+          justify-content: space-around;
+          align-items: center;
+          background: #fff;
+          border-radius: 15px;
+          box-shadow: 0px 43px 80px rgba(0, 0, 0, 0.04), 0px 17.9644px 33.4221px rgba(0, 0, 0, 0.0287542), 0px 9.60461px 17.869px rgba(0, 0, 0, 0.0238443), 0px 5.38427px 10.0172px rgba(0, 0, 0, 0.02), 0px 2.85954px 5.32008px rgba(0, 0, 0, 0.0161557), 0px 1.18992px 2.21381px rgba(0, 0, 0, 0.0112458);
+          .image{
+            max-width: 174px;
+            img{
+              width: 100%;
+            }
+          }
+          .content{
+            h3{
+              font-size: 16px;
+              font-weight: 600;
+            }
+            a{
+              color: $darkRed;
+              text-decoration: underline;
+            }
+          }
+          .amount{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .plus,
+            .minus{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              font-weight: 700;
+              font-size: 30px;
+              border-radius: 100px;
+              width: 35px;
+              height: 35px;
+              &:hover{
+                color: $darkRed
+              }
+            }
+          }
+        }
+      }
+      .basket__products-order{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 27px;
+        .basket__product-sum{
+          font-size: 20px;
+          font-weight: 500;
+          span{
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .price{
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .block-basket{
+      border-radius: 100%;
+      background: $darkRed;
+      padding: 8px 12px;
+      position: relative;
+      .block-basket-length{
+        position: absolute;
+        top: -9%;
+        left: -9%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 700;
+        width: 20px;
+        height: 20px;
+        border-radius: 100px;
+        background: #fff;
+      }
+    }
+    .basket__arrow{
+        border: 8px solid transparent;
+        border-bottom: 7px solid #fff;
+        display: block;
+        margin-top: -5px ;
+      &.active{
+        border-top: 7px solid #fff;
+        border-bottom: 0;
+      }
+    }
+  }
+}
+.main{
+  flex: 1 1 auto;
+  .container{
+    margin: 0 120px;
+  }
+  .mainPage{
+    background-image: url('img/background-color.png');
+    background-repeat: no-repeat;
+    background-color: #555554;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 0 0 0 120px;
+    height: 100%;
+    .content{
+      color: #fff;
+      max-width: 700px;
+      h1{
+        font-size: 35px;
+        margin: 0;
+      }
+      p{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        margin: 30px 0;
+      }
+      .btn-order{
+        display: flex;
+        align-items: center;
+        width: max-content;
+        gap: 5px;
+        padding: 13px 44px;
+        border-radius: 100px;
+        font-weight: 700;
+        border: none;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        background: linear-gradient(to right, #C74C4C, #D38181);
+        transition: .2s;
+        &:hover{
+          box-shadow: 0px 4px 20px $darkRed;
+        }
+
+      }
+    }
+    .image{
+      max-width: 776px;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .asort{
+    .filter{
+      display: flex;
+      gap: 15px;
+      background: $darkRed;
+      padding: 23px 120px;
+      li{
+        button{
+          border: 1px solid #fff;
+          background: $darkRed;
+          color: #fff;
+          padding: 6px 17px;
+          font-weight: 600;
+          font-size: 14px;
+          border-radius: 12px;
+          cursor: pointer;
+          transition: .2s;
+        }
+        &.active button{
+          color: $darkRed;
+          background: #fff;
+        }
+      }
+    }
+    .content-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 30px 0 60px;
+      .block-item{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 20%;
+        max-width: 300px;
+        padding: 20px 30px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+        border-radius: 20px;
+        height: 360px;
+        .img-item{
+          img{
+            width: 100%;
+          }
+        }
+        h3{
+          text-align: center;
+          font-size: 16px;
+          margin: 12px 0 11px;
+        }
+        p{
+          text-align: center;
+          font-size: 11px;
+          font-weight: 500;
+          margin: 0;
+          flex: 1;
+        }
+        .other__item{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .height__item{
+            font-size: 13px;
+            font-weight: 500;
+            &.heightRed{
+              color: $darkRed;
+            }
+          }
+          .price__item{
+            font-size: 16px;
+            color: #1B1B1B;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 120px 30px;
+  background: #1B1B1B;
+
+  .navbar-wrapper{
+    display: flex;
+    gap: 30px;
+    .navbar{
+      line-height: 1.7;
+      padding: 5px;
+      a{
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        &.active{
+          color: $darkRed;
+        }
+      }
+    }
+  }
+  .footer__contact{
+    display: flex;
+    gap: 60px;
+    .footer__block-contact{
+      text-align: center;
+      color: #fff;
+      p{
+        margin: 0;
+        font-size: 19px;
+        font-weight: 500;
+      }
+      .line{
+        width: 45px;
+        height: 3.5px;
+        margin: 6px auto;
+        border-radius: 10px;
+        background: $darkRed;
+      }
+      h3{
+        font-weight: 500;
+        font-size: 20px;
+        margin: 0;
+      }
+    }
+  }
+  .footer__info{
+    text-align: right;
+    p{
+      color: #fff;
+      font-size: 16px;
+      margin: 2px 0;
+      font-weight: 500;
+    }
+    .politic{
+      border-bottom: 1px solid $darkRed;
+      color: $darkRed
+    }
+  }
+}
